@@ -1,0 +1,34 @@
+import turtle as tl
+
+def fractal(lvl, count):
+    if (count==13):
+        return lvl
+    new_lvl = ''
+    for i in lvl:
+        if i =='+':
+            new_lvl = new_lvl + '+'
+        elif i == '-':
+            new_lvl = new_lvl +'-'
+        elif i == 'F':
+            new_lvl = new_lvl +'F'
+        elif i == 'X':
+            new_lvl = new_lvl +'X+YF+'
+        elif i == 'Y':
+            new_lvl = new_lvl +'-FX-Y'    
+    lvl = new_lvl
+    new_lvl = ''
+    return fractal(lvl, count+1)
+result = fractal('FX', 1)
+print(result)
+tl.speed(1000000000)
+tl.penup()
+tl.setx(300)
+tl.sety(100)
+tl.pendown()
+for i in result:
+    if i == '-':
+        tl.left(90)
+    elif i == '+':
+        tl.right(90)
+    else:
+        tl.forward(3)
