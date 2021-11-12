@@ -1,20 +1,28 @@
 import turtle as tl
 
 def fractal_graph(lvl, count):
-"""Инструкция"""
+    """[summary]
+
+    Args:
+        lvl ([type]): [description]
+        count ([type]): [description]
+
+    Returns:
+        [type]: [description]
+    """
     if count==13:
         return lvl
     new_lvl = ''
-    for i_c in lvl:
-        if i_c =='+':
+    for i_c1 in lvl:
+        if i_c1 =='+':
             new_lvl = new_lvl + '+'
-        elif i_c == '-':
+        elif i_c1 == '-':
             new_lvl = new_lvl +'-'
-        elif i_c == 'F':
+        elif i_c1 == 'F':
             new_lvl = new_lvl +'F'
-        elif i_c == 'X':
+        elif i_c1 == 'X':
             new_lvl = new_lvl +'X+YF+'
-        elif i_c == 'Y':
+        elif i_c1 == 'Y':
             new_lvl = new_lvl +'-FX-Y'    
     lvl = new_lvl
     new_lvl = ''
