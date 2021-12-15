@@ -1,9 +1,8 @@
 import unittest
 def rabin_karp(text, pattern):
-"""Ищем соотвествия паттерна и текстовой строки"""
     result=[]
-    text_ord=0
     pattern_ord=0
+    text_ord=0
     if(len(text)-len(pattern)>= 0):
         for n in range(len(text)-len(pattern)):
             if(text_ord==pattern_ord and text[n:n+len(pattern)] == pattern):
