@@ -3,16 +3,16 @@ def rabin_karp(text, pattern):
     result=[]
     text_ord=0
     pattern_ord=0
-    if(len(text)-len(pattern)>= 0):
+    if len(text)-len(pattern)>= 0:
         for i in range (len(pattern)):
             text_ord+=ord(text[i])
             pattern_ord+=ord(pattern[i])
         for n in range(len(text)-len(pattern)):
-            if(text_ord==pattern_ord and text[n:n+len(pattern)]==pattern):
+            if text_ord==pattern_ord and text[n:n+len(pattern)]==pattern:
                 result.append(n)
             text_ord-=ord(text[n])
             text_ord+=ord(text[len(pattern)+n])
-    if (pattern==text[len(text)-len(pattern):] and pattern != '' and text !=''):
+    if pattern==text[len(text)-len(pattern):] and pattern != '' and text !='':
         result.append(len(text) - len(pattern))
     return result
 class RabinKarpTest(unittest.TestCase):
