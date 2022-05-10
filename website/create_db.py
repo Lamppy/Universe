@@ -1,4 +1,4 @@
-from main_web_228 import db
+from main_web import db
 
 
 db.create_all()
